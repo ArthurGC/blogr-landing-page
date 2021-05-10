@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+//Color variables
+$clr-primary-red-100: hsl(355, 100%, 74%);
+$clr-primary-red-300:hsl(356, 100%, 66%);
+$clr-primary-blue-700: hsl(208, 49%, 24%);
+$clr-neutral-white-100: hsl(0, 0%, 100%);
+$clr-neutral-blue-300: hsl(240, 2%, 79%);
+$clr-neutral-blue-500: hsl(207, 13%, 34%);
+$bg-neutral-blue-800: hsl(240, 10%, 16%);
+$bg-gradient-red-100: hsl(13, 100%, 72%);
+$bg-gradient-red-400: hsl(353, 100%, 62%);
+$bg-gradient-blue-300: hsl(237, 23%, 32%);
+$bg-gradient-blue-500: hsl(237, 17%, 21%);
+
+//Font family variables
+    // weights 300 600
+$ff-over: 'Overpass', sans-serif;
+    //weights 400 500 700
+$ff-ubuntu: 'Ubuntu', sans-serif;
+:root{
+    --fs-200:.9rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.6rem;
+    --fs-600: 2.1rem;
+    --fs-700: 2.441rem;
+    --fs-800: 3.052rem;
+}
+*, ::before, ::after{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body {
+  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: $clr-neutral-white-100;
+    width: 100%;
+  }
+h1,
+h2,
+h3,
+h4{
+  font-family: $ff-over;
+  margin: 0;
+}
+p{
+  font-family: $ff-ubuntu;
+}
+
+
+.text-center{
+  text-align: center;
+}
+.header{
+    background-image: linear-gradient(180deg, $bg-gradient-red-100, $bg-gradient-red-400), url(https://raw.githubusercontent.com/ArthurGC/blogr-landing-page/df62513970b6fa07735b17a9f3c0236838ca438f/images/bg-pattern-intro.svg);
+    background-blend-mode: color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 3rem;
+    border-bottom-left-radius: 6rem;
+    &__navbar{
+      height: 50px;
+      font-family: $ff-over;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      a{
+        color: $clr-neutral-white-100;
+      }
+      &__logo{
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+      }
+      &__menu{
+        
+          padding: 2rem 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(80px);
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          background: $clr-neutral-white-100;
+          width: 100%;
+          border-top-right-radius: 1rem;
+          border-top-left-radius: 1rem;
+          p{
+            color: $clr-primary-blue-700;
+            cursor: pointer;
+            &:hover{
+              color: $clr-primary-red-300;
+            }
+          }
+      }
+      &__item{
+          &--ul1,
+          &--ul2,
+          &--ul3{
+            display: none;
+          }
+      }
+      &__buttons{
+        
+        border-top: 1px solid $clr-primary-blue-700;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(260px);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        background: $clr-neutral-white-100;
+        padding: 1rem 0;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        display: none;
+        overflow: hidden;
+      }
+      &__hamb{
+        cursor: pointer;
+      }
+      .header__navbar__btn1,
+      .header__navbar__btn2{
+        cursor: pointer;
+        padding: .5rem 2rem;
+        border-radius: 4rem;
+        transition: transform .5s;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+      .header__navbar__btn1{
+        background: transparent;
+        color: $clr-primary-blue-700;
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+      .header__navbar__btn2{
+        background: linear-gradient(45deg, $bg-gradient-red-100, $bg-gradient-red-400);
+        border: 1px solid rgba($color: #fff, $alpha: .5);
+        color: $clr-neutral-white-100;
+      }
+    }
+
+    &__ctn{
+      padding: 3.9rem 0;
+      &__title{
+        color: $clr-neutral-white-100;
+        text-align: center;
+        font-size: var(--fs-600);
+      }
+      &__dsc{
+        color: $clr-neutral-white-100;
+        text-align: center;
+      }
+      &__btns{
+        margin: 2.8rem 0 2.7rem;
+        text-align: center;
+        .btn{
+          font-family: $ff-ubuntu;
+          font-size: var(--fs-300);
+          font-weight: bold;
+          padding: .8rem 1rem;
+          border-radius: 4rem;
+          border: 1px solid $clr-neutral-white-100;
+          cursor: pointer;
+          &:focus{
+            outline-color: $clr-primary-blue-700;
+          }
+          
+        }
+        &__btn1{
+          background: $clr-neutral-white-100;
+          color: $clr-primary-red-300;
+          &:hover,
+          &:focus{
+            animation-name: start;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+          }
+
+        }
+        &__btn2{
+          background: transparent;
+          color: $clr-neutral-white-100;
+          &:hover,
+          &:focus{
+            animation-name: learn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+    }
+}
+@keyframes start {
+  100%{
+    box-shadow: inset 10rem 0 0 0 $clr-primary-red-300;
+    color: $clr-neutral-white-100;
+  }
+}
+@keyframes learn {
+  100%{
+    box-shadow: inset 10rem 0 0 0 $clr-neutral-white-100;
+    color: $clr-primary-red-300;
+  }
+}
+
+.flex{
+  display: flex;
+}
+.section-light{
+  padding: 6.6rem 0;
+  h2{
+    font-size: var(--fs-500);
+    color: $clr-primary-blue-700;
+  }
+  picture img{
+    width: 100%;
+  }
+  h3{
+    margin: 0;
+    font-size: var(--fs-500);
+    color: $clr-primary-blue-700;
+  }
+  &--flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__left{
+    padding: 2rem 0;
+    &__first,
+    &__second{
+      padding: 0 2.4rem;
+      p{
+        font-size: var(--fs-200);
+        line-height: 1.8;
+        color: $clr-neutral-blue-500;
+      }
+    }
+    &__second{
+      margin-top: 3rem;
+      h3{
+        margin-bottom: 1rem;
+      }
+    }
+    
+  }
+}
+
+.section-dark{
+  background-image: linear-gradient(180deg, $bg-gradient-blue-300, $bg-gradient-blue-500), url(https://raw.githubusercontent.com/ArthurGC/blogr-landing-page/df62513970b6fa07735b17a9f3c0236838ca438f/images/bg-pattern-circles.svg);
+  background-blend-mode: color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 6rem;
+  border-bottom-left-radius: 6rem;
+  padding: 6rem 0;
+  &__left{
+    img{
+      width: 80%;
+    }
+  }
+  &__right{
+    padding: 0 3rem;
+    h2{
+      font-size: var(--fs-600);
+      color: $clr-neutral-white-100;
+    }
+    p{
+      font-size: var(--fs-200);
+      line-height: 1.8;
+      color: $clr-neutral-white-100
+    }
+  }
+}
+
+.section-light--flex--reverse{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 0;
+  picture img{
+    width: 100%;
+  }
+  .section-light__left{
+    &__first,
+    &__second{
+      padding: 0 2.6rem;
+    }
+  }
+}
+
+.footer{
+  background: $bg-neutral-blue-800;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 3rem;
+  flex-wrap: wrap;
+  border-top-right-radius: 6rem;
+  padding: 4.2rem 0;
+  &-section{
+    min-width: 200px;
+    h4{
+      color: $clr-neutral-white-100;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+    li {
+        list-style: none;
+        margin: .8rem 0;
+        a{
+          text-decoration: none;
+          color: $clr-neutral-blue-300;
+          font-size: var(--fs-300);
+          transition: color .5s;
+          &:hover{
+            color: $clr-primary-red-300;
+          }
+          &:focus{
+            outline-color: $clr-primary-red-300;  
+          }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px){
+
+  .header{
+    &__navbar{
+      height: 50px;
+      font-family: $ff-over;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a{
+        color: $clr-neutral-white-100;
+      }
+      &__logo{
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          
+      }
+      &__menu{
+        display: initial;
+        position: relative;
+        margin-left: 7vw;
+
+          padding:  0;
+          transform: translateY(0);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 0rem;
+          background: transparent;
+          width: 100%;
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+
+
+
+
+      }
+      &__item{
+        margin-right: 2rem;
+        color: $clr-neutral-white-100;
+        cursor: pointer;
+        &:hover{
+          color: $clr-primary-blue-700;
+        }
+        
+        &--ul1,
+        &--ul2,
+        &--ul3{
+          display: none;
+          position: absolute;
+          background: $clr-neutral-white-100;
+          top: 3rem;
+          left: -2rem;
+          border-radius: .5rem;
+          padding: 1rem;
+          li{
+            margin: .8rem 0;
+            color: #000;
+          }
+          a{
+            color: #000;
+            
+            &:hover{
+              color: $clr-primary-red-300;
+            }
+          }
+        }
+        &--ul2{
+          left: 5.4rem;
+        }
+        &--ul3{
+          left: 11rem;
+        }
+      }
+      .display{
+        display: initial;
+      }
+      &__buttons{
+        
+        display: initial;
+        margin-right: 2rem;
+
+        border-top: none;
+        position: relative;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0rem;
+        width: 300px;
+        background: transparent;
+        padding: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+
+          a{
+            padding: .5rem 2rem;
+            border-radius: 4rem;
+            cursor: pointer;
+          }
+      }
+      &__hamb{
+        display: none;
+      }
+    }
+  }
+
+
+
+
+  .header__ctn__title{
+    font-size: 4rem;
+  }
+  .text-center{
+    text-align: left;
+  }
+  .section-light{
+    padding: 6rem 3rem;
+    h2{
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+      &--flex{
+        flex-direction: row-reverse;
+        gap: 1rem;
+      }
+      &__left{
+          flex: 1 1 100%;
+      }
+      &__right{
+          flex: 1 1 100%;
+      }
+  }
+
+  .section-dark{
+    flex-direction: row;
+    padding: 1rem 3rem;
+    &__left,
+    &__right{
+      flex: 1 1 100%;
+    }
+  }
+
+
+  .section-light--flex--reverse{
+    flex-direction: row;
+
+    .section-light__left,
+    .section-light__right{
+      flex: 1 1 100%;
+    }
+  }
+  .footer{
+    padding: 4.2rem 3rem;
+    gap: 1rem;
+  }
+
+  .btn{
+    margin: 0 1rem;
+  }
+}
+
+
+@media (min-width: 1200px){
+  :root{
+    --fs-200:1.1rem;
+    --fs-300: 1.2rem;
+    --fs-500: 2.2rem;
+    --fs-600: 2.8rem;
+}
+}
+
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
